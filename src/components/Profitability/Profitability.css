@@ -1,0 +1,238 @@
+@import url(../../globalCSS/vars.css);
+
+.profitability {
+  padding: 90px 0;
+  border-top: 1px solid #E4E4E4;
+}
+.profitability__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 100px;
+}
+.profitability__content {
+  max-width: 545px;
+}
+.profitability__content > *:not(:first-child) {
+  margin-top: 64px;
+}
+.profitability__title {
+  font-size: 64px;
+  color: var(--blue);
+  position: relative;
+  padding-bottom: 20px;
+}
+.profitability__title:after {
+  position: absolute;
+  content: "";
+  height: 4px;
+  width: 33.3%;
+  background-color: var(--blue);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profitability__points-wrap {
+  padding: 25px 0 25px 50px;
+  border-left: 3px solid var(--blue);
+}
+.profitability__points-wrap  > *:not(:first-child) {
+  margin-top: 30px;
+}
+.profitability-points__title {
+  font-size: 32px;
+  color: var(--blue)
+}
+.profitability-points__item > *:not(:first-child) {
+  margin-top: 10px;
+  padding-left: 30px;
+}
+.profitability__img {
+  width: 723px;
+  height: 1050px;
+}
+.profitability__block > *:not(:first-child) {
+  margin-top: 15px;
+}
+.profitability__txt {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: flex-start;
+}
+.profitability__title-wrap > *:not(:first-child) {
+  margin-top: 20px;
+}
+.profitability__img-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+
+@media (max-width: 1425px) {
+  .profitability__img {
+    width: 100%;
+    height: auto;
+  }
+  .profitability__img-wrap {
+    min-width: 47%;
+  }
+}
+@media (max-width: 1300px) {
+  .profitability__title {
+    font-size: 60px;
+  }
+  .profitability-points__txt {
+    font-size: 22px;
+  }
+  .profitability__content > *:not(:first-child) {
+    margin-top: 50px;
+  }
+  .profitability-points__title {
+    font-size: 30px;
+  }
+  .profitability__txt {
+    font-size: 21px;
+  }
+  .profitability__container {
+    align-items: center;
+  }
+  .profitability__points-wrap {
+    padding: 25px 0 25px 35px;
+  }
+  .profitability {
+    padding: 60px 0;
+  }
+}
+@media (max-width: 1200px) {
+  .profitability__title {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .profitability__title {
+    font-size: 50px;
+  }
+  .profitability-points__txt {
+    font-size: 20px;
+  }
+  .profitability__content > *:not(:first-child) {
+    margin-top: 40px;
+  }
+  .profitability-points__title {
+    font-size: 28px;
+  }
+  .profitability__txt {
+    font-size: 18px;
+  }
+  .profitability-points__item > *:not(:first-child) {
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 1036px) {
+  .profitability__title {
+    font-size: 42px;
+  }
+  .profitability__title:after {
+    left: 40%;
+  }
+  .profitability-points__title {
+    font-size: 24px;
+  }
+  .profitability__container {
+    gap: 70px;
+  }
+}
+@media (max-width: 910px) {
+  .profitability__title {
+    font-size: 38px;
+  }
+  .profitability-points__item > *:not(:first-child) {
+    margin-top: 5px;
+  }
+  .profitability__points-wrap > *:not(:first-child) {
+    margin-top: 20px;
+  }
+  .profitability__content > *:not(:first-child) {
+    margin-top: 25px;
+  }
+  .profitability__container {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .profitability__container {
+    flex-direction: column;
+  }
+  .profitability__content {
+    max-width: 80%;
+  }
+  .profitability__title {
+    text-align: center;
+  }
+  .profitability__title:after {
+    left: 50%;
+  }
+  .profitability-points__txt {
+    font-size: 26px;
+  }
+  .profitability-points__title {
+    font-size: 32px;
+  }
+  .profitability-points__item > *:not(:first-child) {
+    margin-top: 10px;
+  }
+  .profitability__title {
+    font-size: 42px;
+  }
+  .profitability__points-wrap {
+    padding: 30px 0 30px 40px;
+  }
+  .profitability__txt {
+    font-size: 23px;
+  }
+  .profitability__img-wrap {
+    width: 90%;
+  }
+}
+
+@media (max-width: 630px) {
+  .profitability__content {
+    max-width: 90%;
+  }
+}
+@media (max-width: 450px) {
+  .profitability-points__title {
+    font-size: 28px;
+  }
+  .profitability__points-wrap {
+    padding: 30px 0 30px 20px;
+  }
+  .profitability-points__txt {
+    font-size: 24px;
+  }
+}
+@media (max-width: 364px) {
+  .profitability__consult {
+    font-size: 22px;
+  }
+}
+@media (max-width: 340px) {
+  .profitability-points__title {
+    font-size: 24px;
+  }
+  .profitability__consult {
+    font-size: 20px;
+  }
+}
+@media (max-width: 320px) {
+  .profitability__consult {
+    font-size: 19px;
+  }
+}

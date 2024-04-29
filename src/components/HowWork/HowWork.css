@@ -1,0 +1,271 @@
+@import url(../../globalCSS/vars.css);
+
+.how-work {
+  padding: 60px 0;
+  border-top: 1px solid #E4E4E4;
+}
+.how-work__container > *:not(:first-child) {
+  margin-top: 85px;
+}
+.how-work__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.how-work__title {
+  text-align: center;
+  display: inline-block;
+  font-size: 48px;
+  color: var(--blue);
+  padding-bottom: 5px;
+  border-bottom: 3px solid var(--blue);
+}
+.how-work__content-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.how-work__content-wrap > * {
+  width: 47%;
+}
+.how-work__img {
+  width: 100%;
+}
+.how-work__consult {
+  display: inline-block;
+}
+.how-work__content > *:not(:first-child) {
+  margin-top: 60px;
+}
+.how-work__mini-title {
+  font-size: 32px;
+  color: var(--blue);
+}
+.how-work__content-txt > *:not(:first-child) {
+  margin-top: 30px;
+}
+.consult-btn {
+  padding: 20px 40px;
+  background-color: var(--blue);
+  color: #fff;
+  display: inline-block;
+}
+.how-statistic__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.how-work__statistic > *:not(:first-child) {
+  margin-top: 60px;
+}
+.how-statistic__diagram {
+  width: 415px;
+  height: 403px;
+  background-image: url(../../assets/HowWork/diagram.svg);
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.how-statistic__top > *:not(:first-child) {
+  margin-top: 30px;
+}
+.how-statistic__title {
+  font-size: 39px;
+  border-bottom: 2px solid var(--gray);
+  padding-bottom: 5px;
+}
+.how-statistic__diagram-data {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.how-statistic__diagram-data-txt {
+  color: #fff;
+}
+.how-statistic__diagram-shekel {
+  width: 52.05%;
+  height: 54.34%;
+}
+.how-statistic__bottom-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.how-statistic__percent {
+  min-width: 100px;
+  min-height: 100px;
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 50%;
+  padding: 30px 18px;
+}
+.how-statistic__text-wrap {
+  max-width: 516px;
+}
+.how-statistic__text-wrap > *:not(:first-child) {
+  margin-top: 15px;
+}
+.how-statistic__bottom > *:not(:first-child) {
+  margin-top: 45px;
+}
+.how-statistic__bottom-item.orange .how-statistic__percent {
+  background-color: #FFAD58;
+}
+.how-statistic__bottom-item.orange .how-work__mini-title {
+  color: #FFAD58;
+}
+
+
+@media (max-width: 14750px) {
+  .how-statistic__title {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 1291px) {
+  .how-statistic__title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 1147px) {
+  .how-statistic__title {
+    font-size: 28px;
+  }
+  .how-statistic__diagram {
+    width: 390px;
+    height: 378px;
+  }
+  .how-work__mini-title {
+    font-size: 28px;
+  }
+  .how-statistic__percent {
+    min-width: 85px;
+    min-height: 85px;
+    font-size: 22px;
+  }
+  .how-statistic__diagram-data-txt {
+    font-size: 22px;
+  }
+  .how-work__txt {
+    font-size: 22px;
+  }
+  .how-work__consult {
+    font-size: 22px;
+    padding: 15px 30px;
+  }
+}
+@media (max-width: 1075px) {
+  .how-statistic__title {
+    border: none;
+    text-align: center;
+  }
+}
+@media (max-width: 975px) {
+  .how-statistic__diagram {
+    width: 360px;
+    height: 349px;
+  }
+  .how-work__mini-title {
+    font-size: 26px;  
+  }
+  .how-statistic__percent {
+    min-width: 75px;
+    min-height: 75px;
+    font-size: 20px;
+    padding: 20px 10px;
+  }
+  .how-work__statistic > *:not(:first-child), .how-work__content > *:not(:first-child) {
+    margin-top: 40px;
+  }
+  .how-statistic__bottom > *:not(:first-child) {
+    margin-top: 30px;
+  }
+  .how-work__title {
+    font-size: 46px;
+  }
+  .how-work__txt, .how-work__consult {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 880px) {
+  .how-work__mini-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .how-work__content-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .how-work__content-wrap > * {
+    width: 80%;
+  }
+  .how-work__mini-title {
+    font-size: 28px;
+  }
+  .how-statistic__title {
+    font-size: 30px;
+  }
+  .how-statistic__diagram {
+    width: 400px;
+    height: 388px;
+  }
+  .how-statistic__percent {
+    min-width: 100px;
+    min-height: 100px;
+    font-size: 28px;
+  } 
+  .how-work__content-wrap {
+    gap: 70px;
+  }
+  .how-work__txt, .how-work__consult {
+    font-size: 24px;
+  }
+  .how-work__container > *:not(:first-child) {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 495px) {
+  /* .how-work__mini-title {
+    font-size: 28px;
+  } */
+  .how-work__content-wrap > * {
+    width: 90%;
+  }
+  .how-work__title {
+    font-size: 38px;
+  }
+  .how-statistic__diagram {
+    width: 330px;
+    height: 320px;
+  }
+  .how-work__mini-title {
+    font-size: 26px;
+  }
+  .how-statistic__percent {
+    min-width: 80px;
+    min-height: 80px;
+    font-size: 23px;
+  }
+}
+@media (max-width: 340px) {
+  .how-statistic__diagram {
+    width: 310px;
+    height: 302px;
+  }
+  .how-work__txt, .how-work__consult {
+    font-size: 22px;
+  }
+}
