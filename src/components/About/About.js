@@ -1,18 +1,14 @@
 import human from "../../assets/About/human.webp";
 import logo from "../../assets/About/logo.webp";
-import alarm from "../../assets/About/alarm.svg";
-import calendar from "../../assets/About/calendar.svg";
-import diploma from "../../assets/About/diploma.svg";
 import phone from "../../assets/HeaderFooter/Header/phone.svg";
 import "./About.css";
 
-
-const About = () => {
+const About = ({content}) => {
   return(
     <section className="about">
       <div id="about" className="_fake"></div>
       <div className="about__container _container">
-        <h5 className="about__title">Почему мы</h5>
+        <h5 className="about__title">{content.title}</h5>
         <div className="about__content">
           <img src={human} alt="human" className="about__human" />
           
@@ -24,7 +20,7 @@ const About = () => {
               </div>
               
               <div className="about__txt-wrap">
-                <p className="about__txt">Генеральный директор компании Илан Чеботарь . Франчайзер всемирно известной компании Римакс. Владелец двух офисов в Хайфе Римакс Гранд. Римакс Гранд входит в тройку самых успешных риелторских офисов в Хайфе по продажам недвижимости</p>
+                <p className="about__txt">{content.text}</p>
                 <a href="tel:052-561-7889" className="header__tel">
                   <img src={phone} alt="phone" className="header__tel-icon" />
                   <span className="header__tel-txt">052-561-7889</span>
@@ -33,22 +29,22 @@ const About = () => {
               
             </div>
 
-            <div className="about__items">
+            {/* <div className="about__items">
               <div className="about__item">
                 <img src={alarm} alt="alarm" className="about__icon" />
-                <p className="about__txt">Комплексное сопровождение для тех, кто хочет инвестировать в недвижимость. Мы позаботимся о каждом этапе процесса.</p>
+                <p className="about__txt">{content.items[0]}</p>
               </div>
 
               <div className="about__item">
                 <img src={diploma} alt="diploma" className="about__icon" />
-                <p className="about__txt">Полная юридическая проверка объекта недвижимости, включая сопровождение сделки покупки</p>
+                <p className="about__txt">{content.items[1]}</p>
               </div>
 
               <div className="about__item">
                 <img src={calendar} alt="calendar" className="about__icon" />
-                <p className="about__txt">Управление объектом и поиск арендаторов</p>
+                <p className="about__txt">{content.items[2]}</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

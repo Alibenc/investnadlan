@@ -5,10 +5,19 @@ import step3 from "../../assets/Step/step3.jpg";
 import step4 from "../../assets/Step/step4.jpg";
 import step5 from "../../assets/Step/step5.jpg";
 import step6 from "../../assets/Step/step6.jpg";
+import step6Il from "../../assets/Step/step6_il.png";
 import { Fade } from "react-awesome-reveal";
 import { useState, useEffect } from "react";
 
-const stepsArr = [
+const stepsArrDefiner = (lang) => {
+  if (lang === "ru") {
+    return rusArr;
+  } else if (lang === "il") {
+    return ilArr;
+  }
+}
+
+const rusArr = [
   {
     number: 1,
     image: step1,
@@ -26,7 +35,7 @@ const stepsArr = [
     image: step3,
     title: "Проверка",
     text: "После выбора объекта, мы передаем объект адвокату, который проверяет, что все в порядке с недвижимостью и что нет долгов, которые могли бы остановить или помешать нам продолжить процесс",
-  },
+    },
   {
     number: 4,
     image: step4,
@@ -45,11 +54,51 @@ const stepsArr = [
     title: "Сдача в аренду",
     text: 'Как только квартиры готовы, они сразу переходят в наш отдел управления и аренды, который заботится об управлении объектами и поиске подходящих арендаторов.',
   },
-]
+];
 
-const Steps = () => {
+const ilArr = [
+  {
+    number: 1,
+    image: step1,
+    title: "פגישת ייעוץ",
+    text: "פגישה אישית או פגישת Zoom עם יועץ פיננסי מוסמך, אתו תוכלו לברר מהן האפשרויות הכדאיות ביותר של מימון רכישת דירה",
+  },
+  {
+    number: 2,
+    image: step2,
+    title: "בחירת הדירה",
+    text: "אנו מציעים למשקיע מגוון נכסים להשקעה, המתאימים ביותר ללקוח בהתחשב צרכיו ויכולותיו הפיננסיות",
+  },
+  {
+    number: 3,
+    image: step3,
+    title: "בדיקה",
+    text: "לאחר בחירת הנכס אנו מעבירים את נתוניו לעורך דין, שבודק כי הכול כשורה ולא קיימים בנוגע לנכס חובות העלולות לבטל את התהליך או להוות לו מכשול.",
+    },
+  {
+    number: 4,
+    image: step4,
+    title: "הכנת הדירה",
+    text: 'תכנון, שיפוץ, חלוקת הדירה. בסיום השיפוץ אנו מציידים את הדירה בריהוט חדש ומכשירי חשמל. לאחר מכן המשקיע מקבל יחידות דיור מוכנות, מאובזרות ומעוצבות. ',
+  },
+  {
+    number: 5,
+    image: step5,
+    title: "קבלת המפתחות",
+    text: 'המשקיע מקבל את המפתחות לדירות מאובזרות, משופצות ומעוצבות, המוכנות לאכלוס. ',
+  },
+  {
+    number: 6,
+    image: step6Il,
+    title: "השכרה",
+    text: 'ברגע שהדירות מוכנות, הטיפול בהן עובר למחלקת הניהול וההשכרה שלנו שתפקידה- ניהול הנכסים ואיתור שוכרים מתאימים.',
+  },
+];
+
+const Steps = ({lang, content}) => {
   const [lineStyleHeight, setLineStyleHeight] = useState(0);
-
+  const stepsArr = stepsArrDefiner(lang);
+  
   useEffect(() => {
     let screenHeight = document.documentElement.offsetHeight;
     let lineHeigh = document.querySelector('.steps__line').getBoundingClientRect().top;
@@ -68,7 +117,7 @@ const Steps = () => {
     <section  className="steps">
       <div id="steps" className="_fake"></div>
       <div className="steps__container _container">
-        <h3 className="steps__title">Пошаговый план действий</h3>
+        <h3 className="steps__title">{content.title}</h3>
 
         <div className="steps__content">
           <div className="steps__line">
@@ -79,7 +128,12 @@ const Steps = () => {
             {
               stepsArr.map((obj, i) => {
                 return(
-                  <Fade direction={!Number.isInteger((i + 1) / 2) || i + 1 / 1 === 1 ? "right" : "left"} className="steps__card-wrap" key={i}>
+                  <Fade 
+                    direction={
+                      !Number.isInteger((i + 1) / 2) || i + 1 / 1 === 1 ? "right" : "left"
+                    } 
+                    className="steps__card-wrap" key={i}
+                  >
                     <div className="steps__card">
                       <p className="steps__number">{obj.number}</p>
                       <img src={obj.image} alt={`step${i + 1}`} className="steps__image" />
@@ -92,20 +146,6 @@ const Steps = () => {
                 )
               })
             }
-            
-            
-
-            {/* <div className="steps__card-wrap">
-              <div className="steps__card">
-                <p className="steps__number">2</p>
-                <img src={step2} alt="step2" className="steps__image" />
-                <div className="steps__txt-content">
-                  <h6 className="steps__title-card">Lorem ipsum</h6>
-                  <p className="steps__txt">Lorem ipsum dolor sit amet consectetur. Nisi lobortis  Lorem ipsum dolor sit amet consectetur. Nisi lobortis  Lorem ipsum dolor sit amet consectetur. Nisi lobortis  Lorem ipsum dolor sit amet consectetur. Nisi lobortis  Lorem ipsum dolor sit amet consectetur. Nisi lobortis </p>
-                </div>
-              </div>
-            </div> */}
-            
           </div>
         </div>
       </div>

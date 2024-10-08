@@ -1,6 +1,7 @@
 /***************************************
 *****************шрифты*****************
 ****************************************/
+
 @font-face {
   font-family: 'Futura PT';
   src: url('../public/fonts/FuturaPT-Book.woff') format('woff'),
@@ -81,6 +82,7 @@
 }
 
 
+
 /***************************************
 **********сброс и заготовки*************
 ***************************************/
@@ -107,7 +109,7 @@ html, body {
 	line-height: 1.2;
 	font-size: var(--base);
 	color: var(--gray);
-  font-family: 'Futura PT';
+  font-family: 'Futura PT', sans-serif;
   font-weight: 400;
   scroll-behavior: smooth;
 }
@@ -144,4 +146,15 @@ body._lock {
   width: 100%;
   height: 1px;
   top: -160px;
+}
+
+@media (max-width: 1024px) {
+  ._fake {
+    top: -154px;
+  }
+}
+@media (max-width: 435px) {
+  ._fake {
+    top: -134px;
+  }
 }

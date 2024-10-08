@@ -94,34 +94,8 @@
   transform: translateY(-50%);
   pointer-events: none;
 }
-
-/* .item__images > div > div > div:not(:first-child) > *, 
-.item__images > div > div > div:not(:last-child) > * {
-  display: none;
-}
-.item__images > div > div > div:not(:first-child), 
-.item__images > div > div > div:not(:last-child) {
-  border: none !important;
-  position: absolute;
-  width: 59px !important;
-  height: 22px !important;
-  border-radius: 0 !important;
-  background-image: url(../../assets/Portfolio/slideIcon.svg);
-  background-size: cover;
-} */
-/* .item__images > div > div > div:first-child, 
-.item__images > div > div > div:last-child {
-  width: 7px !important;
-  height: 100% !important;
-  background-color: var(--blue) !important;
-} */
-
-
 .item__text-content > *:not(:first-child) {
   margin-top: 25px;
-}
-.item__text-wrap > *:not(:first-child) {
-  margin-top: 5px;
 }
 .item__text-wrap > * {
   text-align: left;
@@ -132,7 +106,6 @@
   font-weight: 400;
 }
 .item__title {
-  font-family: "Segoe UI";
   color: var(--blue);
   font-size: 36px;
   font-weight: 600;
@@ -147,7 +120,25 @@
 .react-player__shadow {
   background-color: var(--blue) !important;
 }
+.item__logo-wrap {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.item__logo {
+  width: 40%;
+  height: auto;
+}
 
+/* ru styles */
+._rus .item__images {
+  height: 587px;
+}
+._rus .item__text-wrap > *:not(:first-child) {
+  margin-top: 0;
+}
 
 @media (max-width: 1485px) {
   .portfolio__nav::after {
@@ -182,6 +173,9 @@
     width: 65.32vw;
     height: 36.16vw;
   }
+  ._rus .item__images {
+    height: 39.5vw;
+  }
   .item__text-content {
     width: 29.63vw;
     padding: 2.67vw 2.69vw 2.69vw 2.69vw;
@@ -201,21 +195,8 @@
     width: 0.61vw;  
     height: 0.67vw;
   }
-  /* .item__images > div > div > div:not(:first-child), 
-  .item__images > div > div > div:not(:last-child) {
-    width: 3.97vw !important;
-    height: 1.48vw !important;
-  }
-  .item__images > div > div > div:first-child, 
-  .item__images > div > div > div:last-child {
-    width: 0.47vw !important;
-    height: 100% !important;
-  } */
   .item__text-content > *:not(:first-child) {
     margin-top: 1.68vw;
-  }
-  .item__text-wrap > *:not(:first-child) {
-    margin-top: .3vw;
   }
   .item__title-top {
     font-size: 2.15vw;
@@ -231,7 +212,7 @@
   .portfolio__item {
     flex-direction: column;
   }
-  .item__images {
+  .item__images, ._rus .item__images {
     width: 100%;
     height: 100.16vw;
   }

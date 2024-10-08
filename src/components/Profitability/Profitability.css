@@ -21,6 +21,7 @@
   color: var(--blue);
   position: relative;
   padding-bottom: 20px;
+  text-align: center;
 }
 .profitability__title:after {
   position: absolute;

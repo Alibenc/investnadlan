@@ -1,20 +1,18 @@
 import "./TextBlock.css"
 
-const TextBlock = () => {
+const TextBlock = ({content}) => {
   return(
     <section className="text-block">
       <div className="text-block__container _container">
-        <h3 className="how-work__title">Комплексное сопровождение для инвесторов в недвижимость </h3>
+        <h3 className="how-work__title">{content.title}</h3>
         <div className="text-block__content">
-          <p className="how-work__txt"><b>Финансовое консультирование:</b> Анализ вашего финансового положения и подбор оптимального варианта покупки квартиры под инвестиции.</p>
-          <p className="how-work__txt"><b>Подбор квартиры:</b> Тщательный отбор подходящих вариантов с учетом вашего бюджета и инвестиционных целей.</p>
-          <p className="how-work__txt"><b>Юридическое сопровождение:</b> Полная юридическая проверка объекта недвижимости, включая сопровождение сделки покупки.</p>
-          <p className="how-work__txt"><b>Проектирование и ремонт:</b> Создание дизайна-проекта и проведение качественного ремонта для разделения квартиры на несколько отдельных жилых помещений.</p>
-          <p className="how-work__txt"><b>Максимальная доходность:</b> Сданные в аренду квартиры станут постоянным источником дохода.</p>
-          <p className="how-work__txt"><b>Свобода от забот:</b> Мы возьмем на себя все хлопоты по подбору, покупке, ремонту и сдаче в аренду квартиры. Вы будете получать пассивный доход, не тратя свое время и силы.</p>
-          <p className="how-work__txt"><b>Надежность и профессионализм:</b> Наша компания имеет большой опыт в сфере инвестиций в недвижимость и ремонта. Мы гарантируем высокое качество услуг и сопровождаем вас на каждом этапе.</p>
+          {
+            content.list.map((el, i) => (
+              <p key={i} className="how-work__txt"><b>{el[0]}</b>{el[1]}</p>
+            ))
+          }
         </div>
-        <h5 className="how-work__title text-block__sub-title">Мы позаботимся о каждом этапе процесса!</h5>
+        <h5 className="how-work__title text-block__sub-title">{content.miniTitle}</h5>
       </div>
     </section>
   )

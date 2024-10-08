@@ -1,12 +1,21 @@
 import logo from "../../assets/HeaderFooter/logo.png";
 import phone from "../../assets/HeaderFooter/Header/phone.svg";
+import israelFlag from "../../assets/HeaderFooter/Header/israel.webp"
+import rusFlag from "../../assets/HeaderFooter/Header/russia.webp"
+import arrow from "../../assets/HeaderFooter/Header/arrow.svg"
 import phone2 from "../../assets/HeaderFooter/Header/phone2.svg";
 import "./Header.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({content}) => {
   const [isScroll, setIsScroll] = useState(false);
   const [isMenu, setIsMenu] = useState(false);
+  const [langUrl] = useState(() => {
+    let pathname = window.location.pathname;
+    return pathname.substr(1);
+  });
+  const [isLangSelect, setIsLangSelect] = useState(false);
 
   useEffect(() => {
     setIsScroll(() => {
@@ -23,6 +32,12 @@ const Header = () => {
         setIsScroll(false)
       }
     })
+
+    document.documentElement.addEventListener("click", (e) => {
+      if (!e.target.closest(".header__lang")) {
+        setIsLangSelect(false);
+      }
+    })
   }, []);
 
   useEffect(() => {
@@ -34,18 +49,41 @@ const Header = () => {
   return(
     <header className={isScroll ? "header _scrolled" : "header"}>
       <div className="header__container _container">
-        <a href="#home" className="header__logo-wrap">
-          <img src={logo} alt="logo" className="header__logo" />
-        </a>
+        <div className="header__logo-lang">
+          <a href="#home" className="header__logo-wrap">
+            <img src={logo} alt="logo" className="header__logo" />
+          </a>
+
+          <div 
+            className={isLangSelect ? "header__lang lang _active" : "header__lang lang"}
+            onClick={() => setIsLangSelect(!isLangSelect)}
+          >
+            
+            <img src={langUrl === "ru" ? rusFlag : israelFlag} 
+              alt="флаг" className="lang__flag" 
+            />
+            <img src={arrow} alt="стрелка" className="lang__trinagle"/>
+
+            <div className="lang__select">
+              <Link to={langUrl !== "ru" ? "/ru" : "/"} >
+                <img src={langUrl !== "ru" ? rusFlag : israelFlag} 
+                  alt="флаг" className="lang__flag" 
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+        
         <div className={isMenu ? "header__menu menu _active" : "header__menu menu"}>
           <div className="menu__body">
             <nav className="header__nav">
-              <a onClick={() => setIsMenu(false)} href="#home" className="header__link">Главная</a>
-              <a onClick={() => setIsMenu(false)} href="#how-work" className="header__link">Как это работает</a>
-              <a onClick={() => setIsMenu(false)} href="#steps" className="header__link">Пошаговый план</a>
-              <a onClick={() => setIsMenu(false)} href="#feedback" className="header__link">Консультация</a>
-              <a onClick={() => setIsMenu(false)} href="#about" className="header__link">О нас</a>
-              <a onClick={() => setIsMenu(false)} href="#portfolio" className="header__link">Примеры объектов</a>
+              {
+                content.menu.map((el, i) => {
+                  return(
+                    <a onClick={() => setIsMenu(false)} href={el[0]} key={i} className="header__link">{el[1]}</a>
+                  )
+                })
+              }
             </nav>
             <div className="header__tel-wrap">
               <a href="tel:052-5617889" className="header__tel">

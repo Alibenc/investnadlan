@@ -1,0 +1,147 @@
+.reviews {
+  padding: 60px 0;
+  border-top: 1px solid #E4E4E4;
+}
+.reviews__title {
+  text-align: center;
+  font-size: 64px;
+  color:#1393BE;
+}
+.reviews__item {
+  width: 31%;
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0);
+  padding: 20px;
+}
+.reviews__avatar {
+  height: auto;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.reviews__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.reviews__name {
+  font-size: 30px;
+  color: #1393BE;
+}
+.reviews__status {
+  font-weight: 600;
+}
+.reviews__about > *:not(:first-child) {
+  margin-top: 5px;
+}
+.reviews__list{
+  margin-top: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 45px;
+}
+.reviews__item > *:not(:first-child) {
+  margin-top: 20px;
+}
+.reviews__stars svg {
+  color: rgb(255, 196, 0);
+}
+.reviews__bottom > *:not(:first-child) {
+  margin-top: 10px;
+}
+.reviews__text {
+  font-size: 22px;
+}
+
+@media (max-width: 1350px) {
+  .reviews__list {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .reviews__text {
+    font-size: 1.67vw;
+  }
+  .reviews {
+    padding: 5vw 0;
+    border-top: 0.08vw solid #E4E4E4;
+  }
+  .reviews__title {
+    font-size: 5.33vw;
+  }
+  .reviews__item {
+    box-shadow: 0px 0px 1.25vw -0.42vw rgba(0, 0, 0);
+    padding: 1.67vw;
+  }
+  .reviews__avatar {
+    width: 8.33vw;
+  }
+  .reviews__name {
+    font-size: 2.5vw;
+  }
+  .reviews__about > *:not(:first-child) {
+    margin-top: 0.42vw;
+  }
+  .reviews__list{
+    margin-top: 3.75vw;
+    gap: 2.5vw;
+  }
+  .reviews__item > *:not(:first-child) {
+    margin-top: 1.67vw;
+  }
+  .reviews__bottom > *:not(:first-child) {
+    margin-top: 0.83vw;
+  }
+  .reviews__stars svg {
+    font-size: 1.67vw;
+  }
+  .reviews__status {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .reviews__title {
+    font-size: 9.33vw;
+  }
+  .reviews__list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .reviews__item {
+    width: 90%;
+  }
+  .reviews__avatar {
+    width: 20.33vw;
+  }
+  .reviews__name {
+    font-size: 5.5vw;
+  }
+  .reviews__status {
+    font-size: 4vw;
+  }
+  .reviews__item {
+    padding: 4.67vw;
+    box-shadow: 0px 0px 1.25vw -0.42vw;
+  }
+  .reviews__item > *:not(:first-child) {
+    margin-top: 3.67vw;
+  }
+  .reviews__stars svg {
+    font-size: 3.67vw;
+  } 
+  .reviews__bottom > *:not(:first-child) {
+    margin-top: 2.83vw;
+  }
+  .reviews__text {
+    font-size: 4vw;
+  }
+  .reviews__list {
+    margin-top: 3.75vw;
+    gap: 6.5vw;
+  }
+  .reviews {
+    padding: 8vw 0;
+  }
+}

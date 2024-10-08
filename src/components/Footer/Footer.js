@@ -4,7 +4,7 @@ import logo from "../../assets/HeaderFooter/logo.png"
 import phone from "../../assets/HeaderFooter/Header/phone.svg"
 import phone2 from "../../assets/HeaderFooter/Header/phone2.svg"
 
-const Footer = () => {
+const Footer = ({content}) => {
   return(
     <footer className="footer">
       <div className="footer__container _container">
@@ -14,12 +14,11 @@ const Footer = () => {
           </a>
 
           <ul className="footer__menu">
-            <li><a href="#home" className="footer__link">Главная</a></li>
-            <li><a href="#how-work" className="footer__link">Как это работает</a></li>
-            <li><a href="#steps" className="footer__link">Пошаговый план</a></li>
-            <li><a href="#feedback" className="footer__link">Контакты</a></li>
-            <li><a href="#about" className="footer__link">О нас</a></li>
-            <li><a href="#portfolio" className="footer__link">Примеры объектов</a></li>
+            {
+              content.menu.map((el, i) =>(
+                <li key={i}><a href={el[0]} className="footer__link">{el[1]}</a></li>
+              ))
+            }
           </ul>
             <div className="header__tel-wrap">
               <a href="tel:052-5617889" className="header__tel">

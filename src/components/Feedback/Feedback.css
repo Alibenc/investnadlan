@@ -1,6 +1,11 @@
 .feedback {
-  background-image: url(../../assets/Feedback/test.jpg);
   position: relative;
+}
+.feedback__bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/Feedback/test.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -31,7 +36,7 @@
 .feedback__title {
   font-size: 44px;
   color: #fff;
-  font-family: "Evolventa";
+  font-family: "Evolventa", sans-serif;
 }
 .feedback__title span {
   color: var(--blue);
@@ -47,7 +52,7 @@
   font-size: 16px;
   background-color: transparent;
   border-bottom: 1px solid var(--blue);
-  font-family: "Evolventa";
+  font-family: "Evolventa", sans-serif;
   outline: none;
   font-weight: 700;
   color: #fff;
@@ -67,7 +72,7 @@
 }
 .feedback__txt {
   color: #CFCFCF;
-  font-family: "Evolventa";
+  font-family: "Evolventa", sans-serif;
   font-size: 20px;
   line-height: 1.3;
   font-weight: 400;

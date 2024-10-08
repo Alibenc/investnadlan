@@ -11,50 +11,13 @@ import "./Portfolio.css";
 import video1 from "../../assets/Portfolio/1.mp4";
 import video2 from "../../assets/Portfolio/2.mp4";
 import video3 from "../../assets/Portfolio/3.mp4";
+import video4 from "../../assets/Portfolio/4.mp4";
+import video5 from "../../assets/Portfolio/5.mp4";
+import ruVideo from "../../assets/Portfolio/rus.mp4"
+import ilVideo from "../../assets/Portfolio/il.mp4";
 
-const content = {
-  first: {
-    txtContent: {
-      titleMain: "Хайфа",
-      text: [
-        "Стоимость квартиры — 850 000 шек",
-        "Размер машканты — 637 500 шек",
-        "Личное участие — 362 500 шек",
-        "Стоимость ремонта для разделения на 2 жилых единицы + мебель и электротовары — 150 000 шек",
-        "Стоимость аренды (посуточно) за месяц — 6800 шек",
-        "Средняя рентабельность — 10.5%",
-      ]
-    }
-  },
-  secound: {
-    txtContent: {
-      titleMain: "Хайфа",
-      text: [
-        "Стоимость квартиры — 700 000 шек",
-        "Размер машканты — 525 500 шек",
-        "Личное участие — 325 000 шек",
-        "Стоимость ремонта для разделения на 2 жилых единицы + мебель и электротовары — 150 000 шек",
-        "Стоимость аренды (посуточно) в месяц — 6200 шек",
-        "Средняя рентабельность — 15.9%",
-      ]
-    }
-  },
-  third: {
-    txtContent: {
-      titleMain: "Хайфа",
-      text: [
-        "Стоимость квартиры — 1 000 000 шек",
-        "Размер машканты — 750 000 шек",
-        "Личное участие — 450 000 шек",
-        "Стоимость ремонта для разделения на 3 жилых единицы + мебель и электротовары — 200 000 шек",
-        "Стоимость аренды (посуточно) в месяц — 8700 шек",
-        "Средняя рентабельность — 10.4%",
-      ]
-    }
-  }
-}
 
-const Portfolio = () => {
+const Portfolio = ({content, direction, lang}) => {
   const [activeSlide, setActiveSlide] = useState(null);
 
   return(
@@ -62,11 +25,12 @@ const Portfolio = () => {
       <div id="portfolio" className="_fake"></div>
       <div className="portfolio__container _container">
         <div className="portfolio__title-wrap">
-          <h4 className="portfolio__title">Примеры наших объектов</h4>
+          <h4 className="portfolio__title">{content.title}</h4>
         </div>
         <div className="portfolio__content">
           <div className="portfolio__swiper-parent">
             <Swiper
+              dir={direction}
               className="portfolio__swiper"
               modules={[Navigation, Pagination]}
               navigation={{
@@ -87,14 +51,32 @@ const Portfolio = () => {
                 video && video.pause();
               }}
             >
+              {
+                lang === "ru" &&
+                <SwiperSlide className="portfolio__slide">
+                  <Item video={ruVideo} desc={null} itemData={content.items[0]}/>
+                </SwiperSlide>
+              }
+              {
+                lang === "il" &&
+                <SwiperSlide className="portfolio__slide">
+                  <Item video={ilVideo} desc={null} itemData={content.items[0]}/>
+                </SwiperSlide>
+              }
               <SwiperSlide className="portfolio__slide">
-                <Item video={video1} itemData={content.first}/>
+                <Item video={video1} itemData={content.items[0]}/>
               </SwiperSlide>
               <SwiperSlide className="portfolio__slide">
-                <Item video={video2} itemData={content.secound}/>
+                <Item video={video2} itemData={content.items[1]}/>
               </SwiperSlide>
               <SwiperSlide className="portfolio__slide">
-                <Item video={video3} itemData={content.third}/>
+                <Item video={video3} itemData={content.items[2]}/>
+              </SwiperSlide>
+              <SwiperSlide className="portfolio__slide">
+                <Item video={video4} itemData={content.items[3]}/>
+              </SwiperSlide>
+              <SwiperSlide className="portfolio__slide">
+                <Item video={video5} itemData={content.items[4]}/>
               </SwiperSlide>
             </Swiper>
             <div className="portfolio__nav-wrap-parent">
@@ -102,6 +84,7 @@ const Portfolio = () => {
                 <div className="portfolio__prev swiper-button-prev portfolio__nav"></div>
                 <div className="portfolio__next swiper-button-next portfolio__nav"></div>
               </div>
+              
               <div className="portfolio__pagination swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal"></div>
             </div>
           </div>

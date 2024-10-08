@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import preview from "../../assets/Portfolio/preview.webp"
+import logo from "../../assets/HeaderFooter/logo.png"
 
-const Item = ({itemData, video}) => {
+const Item = ({itemData, video, desc}) => {
   let isSwipe = false;
 
   return(
@@ -22,15 +23,18 @@ const Item = ({itemData, video}) => {
       </div>
       <div className="item__text-content">
         <div className="item__title-wrap">
-          <h4 className="item__title">{itemData.txtContent.titleMain}</h4>
+          <h4 className="item__title">{itemData.title}</h4>
         </div>
-        <div className="item__text-wrap">
+        <div className={desc !== null ? "item__text-wrap" : "item__logo-wrap"} >
           {
-            itemData.txtContent.text.map((string, i) => {
+            desc !== null ?
+            itemData.text.map((string, i) => {
               return(
                 <p key={i} className="item__txt">{string}</p>
               )
             })
+            :
+            <img src={logo} alt="logo" className="item__logo" />
           }
         </div>
       </div>

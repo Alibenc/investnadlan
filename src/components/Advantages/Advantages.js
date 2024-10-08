@@ -1,4 +1,4 @@
-import { useEffect, useState, createRef } from "react";
+import { useEffect, useState } from "react";
 import { useInView } from 'react-intersection-observer';
 import capital from "../../assets/Advantages/capital.svg"
 import investors from "../../assets/Advantages/investors.svg"
@@ -6,7 +6,7 @@ import projects from "../../assets/Advantages/projects.svg"
 import rent from "../../assets/Advantages/rent.svg"
 import "./Advantages.css"
 
-const Advantages = () => {
+const Advantages = ({content}) => {
   const [ investVal, setInvestVal ] = useState(0);
   const [ projectsVal, setProjectsVal ] = useState(0);
   const [ capitalVal, setCapitalVal ] = useState(0);
@@ -54,25 +54,25 @@ const Advantages = () => {
       <div className="advantages__container _container">
         <div className="advantages__item">
           <h3 className="advantages__title">{investVal}+</h3>
-          <p className="advantages__text">Активные инвесторы</p>
+          <p className="advantages__text">{content[0]}</p>
           <img src={investors} alt="investors" className="advantages__icon" />
         </div>
 
         <div className="advantages__item">
           <h3 className="advantages__title">{projectsVal}</h3>
-          <p className="advantages__text">Действующие проекты</p>
+          <p className="advantages__text">{content[1]}</p>
           <img src={projects} alt="projects" className="advantages__icon" />
         </div>
 
         <div className="advantages__item">
           <h3 className="advantages__title">{capitalVal}%</h3>
-          <p className="advantages__text">Необходимый капитал</p>
+          <p className="advantages__text">{content[2]}</p>
           <img src={capital} alt="capital" className="advantages__icon" />
         </div>
 
         <div className="advantages__item">
           <h3 className="advantages__title">{rentVal}%+</h3>
-          <p className="advantages__text">Рентабельность</p>
+          <p className="advantages__text">{content[3]}</p>
           <img src={rent} alt="rent" className="advantages__icon" />
         </div>
       </div>

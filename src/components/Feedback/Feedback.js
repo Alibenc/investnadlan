@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import FormResult from "./FormResult";
 
 
-const Feedback = () => {
+const Feedback = ({content}) => {
   const form = useRef();
   const [isErr, setIsErr] = useState(null);
   const [isLoad, setIsLoad] = useState(null);
@@ -28,13 +28,14 @@ const Feedback = () => {
   };
   return(
     <section className="feedback">
-      <FormResult isErr={isErr} setIsErr={setIsErr} isLoad={isLoad} setIsLoad={setIsLoad}/>
+      <div className="feedback__bg"></div>
+      <FormResult content={content} isErr={isErr} setIsErr={setIsErr} isLoad={isLoad} setIsLoad={setIsLoad}/>
       <div id="feedback" className="_fake"></div>
       <div className="feedback__blur"></div>
       <div className="feedback__container _container">
         <div className="feedback__container-inner">
           <div className="feedback__content">
-            <h5 className="feedback__title">У вас еще остались <br /><span>вопросы?</span></h5>
+            <h5 className="feedback__title">{content.title[0]} <br /><span>{content.title[1]}</span></h5>
             <form onChange={() => setMessage(`name: ${nameValue}, phone: ${phoneValue}`)} 
               onSubmit={(e) => {
                 if (phoneValue && nameValue !== '') {
@@ -48,16 +49,16 @@ const Feedback = () => {
             >
               <input onChange={(e) => {
                 setNameValue(e.target.value);
-              }} placeholder="Введите имя" type="text" className="feedback__input" />
+              }} placeholder={content.placeholderName} type="text" className="feedback__input" />
               <input onChange={(e) => {
                 setPhoneValue(e.target.value);
-              }} placeholder="Телефон" type="text" className="feedback__input" />
+              }} placeholder={content.placeholderPhone} type="text" className="feedback__input" />
 
               <textarea name="message" value={message} className="feedback__textarea" />
-              <button className="feedback__submit">Отправить!</button>
-              <p className={isValid ? "feedback__warn" : "feedback__warn _active"}>Заполните все поля!</p>
+              <button className="feedback__submit">{content.send}</button>
+              <p className={isValid ? "feedback__warn" : "feedback__warn _active"}>{content.error}</p>
             </form>
-            <p className="feedback__txt">Заполните форму, и наш специалист вернется к вам в ближайщее время! Так же, можете позвонить нам по номеру: <a href="tel:052-5617889">052-5617889</a></p>
+            <p className="feedback__txt">{content.text} <a href="tel:052-5617889">052-5617889</a></p>
           </div>
         </div>
       </div>
